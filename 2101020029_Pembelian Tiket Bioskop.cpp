@@ -37,7 +37,7 @@ int main ()
 
     for (int count = 0; count < baris; count++)
 	{
-		cout << "Harga Kursi Setiap Baris " << (count + 1) << ": ";
+		cout << "List Hara Kursi " << (count + 1) << ": ";
 		cin >> price [count];
 	}
 	
