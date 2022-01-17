@@ -16,8 +16,9 @@ int show_menu()
 		cout << " \tMAIN MENU\n";
 		cout << " 1. List Harga Kursi.\n";
 		cout << " 2. Beli Tiket.\n";
-		cout << " 3. Keluar.\n";
-		cout << "___\n\n";
+		cout << " 3. Pendapatan Hari Ini.\n";
+		cout << " 4. Keluar.\n";
+		cout << "_\n\n";
 		cout << "Masukkan Pilihan Anda: ";
 		cin >> MenuChoice;
 		cout << endl << endl;
@@ -31,6 +32,8 @@ int main ()
     int price [Num_Rows];
     int baris2, kolom2, total, cost;
     int a;
+    int jumlahTerjual = 0;
+    int pendapatan = 0;
     
     cout << "SELAMAT DATANG DI BIOSKOP KAMI";
     cout << endl << endl;
@@ -63,7 +66,7 @@ int main ()
                     cin >> baris2;
                     cout << "Pilih Kolom Kursi yang Anda Inginkan: ";
                     cin >> kolom2;
-                    cost = price [baris2] + 0;
+                    cost = price [baris2-1];
                     total = total + cost;
                     cout << "Tiket Seharga: " << cost << endl;
                     cout << "Konfirmasi Pembelian? Enter (1 = IYA / 2 = TIDAK)";
@@ -74,6 +77,8 @@ int main ()
                     if (a == 1)
                     { 
                         cout << "Pembelian Tiket Anda Telah Terkonfirmasi." << endl;
+                        jumlahTerjual++;
+                        pendapatan += cost;
                         cout << "Apakah Anda Ingin Membeli Kursi Yang Lain? (1 = IYA / 2 = TIDAK)";
                         cout << endl;
                         cin >> Quit;
@@ -87,11 +92,15 @@ int main ()
                             
                 }
                 break;
-			
+                
             case 3:
-                cout << "quit\n";
+                cout << endl <<  "----------------------" << endl;
+                cout << "Total Kursi Terjual : " << jumlahTerjual << endl;
+                cout << "Jumlah Pendapatan   : " << pendapatan << endl;
+			
+            case 4:
+                cout << "Quit\n";
                 break;
         }
-	};
-
+	}
 }
